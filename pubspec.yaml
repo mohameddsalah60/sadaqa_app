@@ -93,6 +93,8 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/icons/sadaqa_app_icon.png"
-  adptive_icon_background: "#ffffff"
-  adptive_icon_foregroung: "assets/images/icons/sadaqa_app_foregroung_icon.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/icons/sadaqa_app_icon_no_background.png"
+  image_path_ios: "assets/images/icons/sadaqa_app_icon.png"
+  
   min_sdk_android: 21 
