@@ -18,7 +18,10 @@ class SadaqaApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(scaffoldBackgroundColor: AppColors.scaffoldColor),
+          theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.scaffoldColor,
+            fontFamily: 'Cairo',
+          ),
           home: Scaffold(body: Text("data")),
         );
       },
