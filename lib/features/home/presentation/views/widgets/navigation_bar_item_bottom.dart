@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/app_colors.dart';
-import '../../domin/entites/bottom_navigation_bar_entity.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../domin/entites/bottom_navigation_bar_entity.dart';
 import 'active_item.dart';
 
 class NavigationBarItemBottom extends StatelessWidget {
@@ -17,7 +17,7 @@ class NavigationBarItemBottom extends StatelessWidget {
     return isSelected
         ? Container(
           decoration: ShapeDecoration(
-            color: AppColors.softAccent,
+            color: AppColors.blueLight,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(32)),
             ),

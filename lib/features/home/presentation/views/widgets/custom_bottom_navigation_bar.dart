@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sadaqa_app/core/utils/app_colors.dart';
 
-import '../../domin/entites/bottom_navigation_bar_entity.dart';
+import '../../../domin/entites/bottom_navigation_bar_entity.dart';
 import 'navigation_bar_item_bottom.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {

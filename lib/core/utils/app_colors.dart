@@ -17,6 +17,7 @@ class AppColors {
   static const blackColor = Color(0xff000000);
   static const greyColor = Color(0xff9E9E9E);
   static const lightGrey = Color(0xffE0E0E0);
+  static const blueLight = Color(0xff01A2B7);
 
   // Accent (Elegant Gold)
   static const accentColor = Color(0xffD4AF37);
