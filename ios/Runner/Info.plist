@@ -6,6 +6,8 @@
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>
 		<string>صَدَقَةْ</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>لمعرفة أوقات الصلاة في منطقتك بدقة، يرجى تفعيل خدمة الموقع.</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>

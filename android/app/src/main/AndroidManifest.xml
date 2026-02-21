@@ -3,6 +3,7 @@
         android:label="صَدَقَةْ"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
