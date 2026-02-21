@@ -47,8 +47,9 @@ String getArabicDayAndMonth() {
   final monthName = arabicMonths[now.month - 1];
 
   final hijri = HijriCalendar.fromDate(now);
+  final hijriDay = hijri.hDay == 1 ? hijri.hDay : hijri.hDay - 1;
   final hijriMonthName = hijriMonths[hijri.hMonth - 1];
 
   return "$dayName ${now.day} $monthName • "
-      "${hijri.hDay} $hijriMonthName ${hijri.hYear}";
+      "$hijriDay $hijriMonthName ${hijri.hYear} هـ";
 }
