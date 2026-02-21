@@ -55,6 +55,7 @@ class GeoLocationService implements LocationService {
     required UserLocation userLocation,
   }) async {
     try {
+      await GeocodingPlatform.instance!.setLocaleIdentifier('ar_EG');
       final placemarks = await placemarkFromCoordinates(
         userLocation.latitude,
         userLocation.longitude,
