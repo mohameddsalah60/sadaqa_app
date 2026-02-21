@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sadaqa_app/core/services/get_it_service.dart';
 import 'package:sadaqa_app/core/utils/app_colors.dart';
 import 'package:sadaqa_app/features/home/presentation/views/home_view.dart';
 import 'package:sadaqa_app/generated/l10n.dart';
@@ -8,6 +9,8 @@ import 'package:sadaqa_app/generated/l10n.dart';
 import 'core/helper_functions/on_generate_routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   runApp(const SadaqaApp());
 }
 

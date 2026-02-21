@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
+import '../../cubit/preyer_cubit.dart';
 import 'prayer_countdown_timer.dart';
 
 class NextPrayerWidget extends StatelessWidget {
@@ -35,7 +37,13 @@ class NextPrayerWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 8.h),
-              PrayerCountdownTimer(targetTime: prayerTime),
+              PrayerCountdownTimer(
+                targetTime: prayerTime,
+
+                onFinished: () {
+                  context.read<PreyerCubit>().updateNextPrayer();
+                },
+              ),
             ],
           ),
           SizedBox(width: 16.w),

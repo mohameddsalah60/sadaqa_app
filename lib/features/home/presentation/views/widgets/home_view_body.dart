@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'custom_prayer.dart';
 import 'date_today_widget.dart';
 import 'my_location_text.dart';
-import 'next_prayer_widget.dart';
+import 'next_pray_bloc_builder.dart';
+import 'pray_list_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -23,18 +23,9 @@ class HomeViewBody extends StatelessWidget {
               SizedBox(height: 16.h),
               DateTodayWidget(),
               SizedBox(height: 16.h),
-              NextPrayerWidget(
-                prayerName: 'العصر',
-                prayerTime: DateTime(
-                  DateTime.now().year,
-                  DateTime.now().month,
-                  DateTime.now().day,
-                  19,
-                  30,
-                ),
-              ),
+              NextPrayBlocBuilder(),
               SizedBox(height: 16.h),
-              CustomPrayer(prayerName: 'صلاة الظهر', prayerTime: '12:30 ص'),
+              PrayListBlocBuilder(),
             ],
           ),
         ),

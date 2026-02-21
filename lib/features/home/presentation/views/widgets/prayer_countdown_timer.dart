@@ -6,8 +6,13 @@ import '../../../../../core/utils/app_text_styles.dart';
 
 class PrayerCountdownTimer extends StatefulWidget {
   final DateTime targetTime;
+  final VoidCallback onFinished;
 
-  const PrayerCountdownTimer({super.key, required this.targetTime});
+  const PrayerCountdownTimer({
+    super.key,
+    required this.targetTime,
+    required this.onFinished,
+  });
 
   @override
   State<PrayerCountdownTimer> createState() => _PrayerCountdownTimerState();
@@ -20,27 +25,52 @@ class _PrayerCountdownTimerState extends State<PrayerCountdownTimer> {
   @override
   void initState() {
     super.initState();
+
     remaining = widget.targetTime.difference(DateTime.now());
+
     _startTimer();
   }
 
   void _startTimer() {
+    timer?.cancel();
+
     timer = Timer.periodic(const Duration(seconds: 1), (_) {
       final diff = widget.targetTime.difference(DateTime.now());
 
-      if (diff.isNegative) {
+      /// لو الوقت خلص
+      if (diff.isNegative || diff.inSeconds == 0) {
         timer?.cancel();
-      } else {
-        setState(() {
-          remaining = diff;
-        });
+
+        widget.onFinished(); // يحدث الصلاة الجاية
+
+        return;
       }
+
+      setState(() {
+        remaining = diff;
+      });
     });
+  }
+
+  /// لو الصلاة الجاية اتغيرت
+  @override
+  void didUpdateWidget(covariant PrayerCountdownTimer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.targetTime != widget.targetTime) {
+      timer?.cancel();
+
+      remaining = widget.targetTime.difference(DateTime.now());
+
+      _startTimer();
+    }
   }
 
   String _format(Duration duration) {
     final hours = duration.inHours;
+
     final minutes = duration.inMinutes.remainder(60);
+
     final seconds = duration.inSeconds.remainder(60);
 
     return "${hours.toString().padLeft(2, '0')}:"
@@ -51,6 +81,7 @@ class _PrayerCountdownTimerState extends State<PrayerCountdownTimer> {
   @override
   void dispose() {
     timer?.cancel();
+
     super.dispose();
   }
 
