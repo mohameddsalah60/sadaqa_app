@@ -76,7 +76,8 @@ class PreyerCubit extends Cubit<PreyerState> {
       final placemarks = await prayerRepo.getPlacemarksFromCoordinates(
         userLocation: getUserLocation,
       );
-      placeUser = '${placemarks.first.locality},${placemarks.first.country}';
+      placeUser =
+          '${placemarks.first.administrativeArea} , ${placemarks.first.country}';
       log('Placemarks: ${placemarks.map((p) => p.toString()).join(', ')}');
     } catch (e) {
       log('Failed to get placemarks: $e');
