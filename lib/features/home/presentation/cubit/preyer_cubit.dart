@@ -24,7 +24,7 @@ class PreyerCubit extends Cubit<PreyerState> {
       final result = await prayerRepo.getPrayerTimes(location: location);
       result.fold((failure) => emit(PreyerFailure(failure.errorMessage)), (
         prayerTimes,
-      ) {
+      ) async {
         prayers = prayerTimes;
         log('${prayerTimes[0].prayerTime}');
         nextPrayer = getNextPrayer();

@@ -8,7 +8,7 @@ import 'package:sadaqa_app/generated/l10n.dart';
 
 import 'core/helper_functions/on_generate_routes.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
   runApp(const SadaqaApp());

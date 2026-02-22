@@ -8,6 +8,16 @@
 		<string>صَدَقَةْ</string>
 		<key>NSLocationWhenInUseUsageDescription</key>
 		<string>لمعرفة أوقات الصلاة في منطقتك بدقة، يرجى تفعيل خدمة الموقع.</string>
+		<key>UIBackgroundModes</key>
+		<array>
+    		<string>remote-notification</string>
+		</array>
+
+		<key>UILocalNotificationsEnabled</key>
+		<true/>
+
+		<key>NSUserNotificationUsageDescription</key>
+		<string>يحتاج التطبيق إلى إرسال إشعارات لك لتنبيهك بمواقيت الصلاة والأذكار اليومية</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
