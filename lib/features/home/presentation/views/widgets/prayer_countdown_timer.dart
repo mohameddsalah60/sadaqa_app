@@ -37,11 +37,21 @@ class _PrayerCountdownTimerState extends State<PrayerCountdownTimer> {
     timer = Timer.periodic(const Duration(seconds: 1), (_) {
       final diff = widget.targetTime.difference(DateTime.now());
 
-      /// لو الوقت خلص
-      if (diff.isNegative || diff.inSeconds == 0) {
+      /// لو الوقت خلص أو فات
+      if (diff.isNegative || diff.inSeconds <= 0) {
         timer?.cancel();
 
-        widget.onFinished(); // يحدث الصلاة الجاية
+        // متحدثش حالة الـ widget
+        setState(() {
+          remaining = const Duration();
+        });
+
+        // استنى 1 ثانية عشان الساعة تضبط
+        Future.delayed(const Duration(seconds: 1), () {
+          if (mounted) {
+            widget.onFinished();
+          }
+        });
 
         return;
       }

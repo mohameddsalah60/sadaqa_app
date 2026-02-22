@@ -35,8 +35,13 @@ class PreyerCubit extends Cubit<PreyerState> {
 
   PreyerEntity getNextPrayer() {
     final now = DateTime.now();
-
+    log('Current time: $now');
     prayers.sort((a, b) => a.prayerTime.compareTo(b.prayerTime));
+    for (var p in prayers) {
+      log(
+        '${p.prayerName}: ${p.prayerTime} | isAfter now: ${p.prayerTime.isAfter(now)}',
+      );
+    }
 
     for (var prayer in prayers) {
       if (prayer.prayerTime.isAfter(now)) {
