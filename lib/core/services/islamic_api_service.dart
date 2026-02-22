@@ -10,6 +10,7 @@ class IslamicApiService {
   }) async {
     try {
       var data = await apiService.get(
+        baseLink: 'https://islamicapi.com/api/v1/',
         endPoint:
             'prayer-time/?lat=$lat&lon=$long&method=5&api_key=WEca8Cx0ip44m6kqLGCJFW96Qp48Y6JUoHIosj3lgC91B4sw',
       );
