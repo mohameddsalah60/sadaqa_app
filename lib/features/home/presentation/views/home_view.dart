@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sadaqa_app/features/home/domin/repos/prayer_repo.dart';
 
 import '../../../../core/services/get_it_service.dart';
+import '../../../azkar/presentation/views/azkar_view.dart';
 import '../cubit/preyer_cubit.dart';
 import 'widgets/custom_bottom_navigation_bar.dart';
 import 'widgets/home_view_body.dart';
@@ -39,6 +40,7 @@ class _MainViewState extends State<MainView> {
                 (context) => PreyerCubit(getIt<PrayerRepo>())..getPrayerTimes(),
             child: HomeViewBody(),
           ),
+          AzkarView(),
         ],
       ),
     );
