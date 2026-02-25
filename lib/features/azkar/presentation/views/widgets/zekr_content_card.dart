@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sadaqa_app/core/utils/app_colors.dart';
 import 'package:sadaqa_app/core/utils/app_text_styles.dart';
 import 'package:sadaqa_app/features/azkar/domin/entites/azkar_entity.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'animated_progress_indicator.dart';
 
@@ -47,6 +48,43 @@ class ZekrContentCard extends StatelessWidget {
                   SizedBox(height: 24.h),
                   if (zekr.description.isNotEmpty) _buildDescription(),
                   _buildCounter(),
+                  SizedBox(height: 24.h),
+                  GestureDetector(
+                    onTap: () {
+                      String shareText = '📿\n\n';
+                      shareText += '\n${zekr.content}\n\n';
+
+                      if (zekr.description.isNotEmpty) {
+                        shareText += '\n${zekr.description}\n\n';
+                      }
+
+                      shareText += '**عدد المرات:** ${zekr.count}\n';
+                      shareText += '🔹 شارك الأجر مع أحبابك 🔹';
+
+                      SharePlus.instance.share(
+                        ShareParams(
+                          text: shareText,
+                          subject: 'ذكر من تطبيق صدقة',
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      margin: EdgeInsets.symmetric(horizontal: 16.r),
+                      padding: EdgeInsets.all(16.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.blueLight,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Text(
+                        'مشاركة',
+                        textAlign: TextAlign.center,
+                        style: TextStyles.medium15.copyWith(
+                          color: AppColors.whiteColor,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
