@@ -50,6 +50,12 @@ abstract class TextStyles {
     color: Colors.white,
   );
 
+  static TextStyle semiBold19 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 19.sp,
+    color: Colors.white,
+  );
+
   static TextStyle semiBold14 = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 14.sp,
@@ -79,7 +85,16 @@ abstract class TextStyles {
     fontSize: 15.sp,
     color: Colors.white,
   );
-
+  static TextStyle medium18 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 18.sp,
+    color: Colors.white,
+  );
+  static TextStyle medium12 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 12.sp,
+    color: Colors.white,
+  );
   static TextStyle regular26 = TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 26.sp,

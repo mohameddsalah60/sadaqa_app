@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/azkar_cubit.dart';
+import '../zekr_view.dart';
 import 'custom_azkar_button.dart';
 
 class AzkarListBlocBuilder extends StatelessWidget {
@@ -27,7 +28,13 @@ class AzkarListBlocBuilder extends StatelessWidget {
               return CustomAzkarButton(
                 azkarName: category.name,
                 azkarIcon: category.categoryIcons[category.name] ?? Icons.book,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    ZekrView.routeName,
+                    arguments: category,
+                  );
+                },
               );
             },
           );
