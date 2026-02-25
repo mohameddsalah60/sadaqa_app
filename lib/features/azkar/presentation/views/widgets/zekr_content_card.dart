@@ -44,7 +44,7 @@ class ZekrContentCard extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _buildContent(),
+                  _buildContent(context),
                   SizedBox(height: 24.h),
                   if (zekr.description.isNotEmpty) _buildDescription(),
                   _buildCounter(),
@@ -79,14 +79,22 @@ class ZekrContentCard extends StatelessWidget {
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(BuildContext context) {
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Text(
-          zekr.content,
-          textAlign: TextAlign.center,
-          style: TextStyles.semiBold16,
+        child: Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.4,
+          ),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Text(
+              zekr.content,
+              textAlign: TextAlign.center,
+              style: TextStyles.semiBold16,
+            ),
+          ),
         ),
       ),
     );
