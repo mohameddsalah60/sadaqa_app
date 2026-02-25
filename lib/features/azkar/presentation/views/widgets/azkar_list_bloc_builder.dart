@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../cubit/azkar_cubit.dart';
+import '../../cubits/azkar_category_cubit/azkar_cubit.dart';
 import '../zekr_view.dart';
 import 'custom_azkar_button.dart';
 

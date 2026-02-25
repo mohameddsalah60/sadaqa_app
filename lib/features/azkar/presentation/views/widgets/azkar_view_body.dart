@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sadaqa_app/core/utils/app_text_styles.dart';
 import 'package:sadaqa_app/core/widgets/custom_text_field.dart';
-import 'package:sadaqa_app/features/azkar/presentation/cubit/azkar_cubit.dart';
+import 'package:sadaqa_app/features/azkar/presentation/cubits/azkar_category_cubit/azkar_cubit.dart';
 
 import 'azkar_list_bloc_builder.dart';
 

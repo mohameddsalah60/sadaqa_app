@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sadaqa_app/core/services/get_it_service.dart';
 import 'package:sadaqa_app/features/azkar/domin/repos/azkar_repo.dart';
-import 'package:sadaqa_app/features/azkar/presentation/cubit/azkar_cubit.dart';
+import 'package:sadaqa_app/features/azkar/presentation/cubits/azkar_category_cubit/azkar_cubit.dart';
 
 import 'widgets/azkar_view_body.dart';
 

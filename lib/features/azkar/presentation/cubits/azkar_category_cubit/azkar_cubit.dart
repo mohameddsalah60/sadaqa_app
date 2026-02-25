@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sadaqa_app/features/azkar/domin/repos/azkar_repo.dart';
 
-import '../../domin/entites/azkar_entity.dart';
+import '../../../domin/entites/azkar_entity.dart';
 
 part 'azkar_state.dart';
 
