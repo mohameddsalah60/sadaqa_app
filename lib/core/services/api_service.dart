@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
@@ -34,7 +34,9 @@ class ApiService {
         options: headers ?? options,
       );
     }
-    log("API RESPONSE: ${response.data}");
+    if (response.data is String) {
+      return jsonDecode(response.data) as Map<String, dynamic>;
+    }
     return response.data;
   }
 }

@@ -31,9 +31,16 @@ class CustomAzkarButton extends StatelessWidget {
           children: [
             Icon(azkarIcon, color: AppColors.whiteColor, size: 16.r),
             SizedBox(width: 16.w),
-            Text(
-              azkarName,
-              style: TextStyles.medium15.copyWith(color: AppColors.whiteColor),
+            Expanded(
+              flex: 9,
+              child: Text(
+                azkarName,
+                style: TextStyles.medium15.copyWith(
+                  color: AppColors.whiteColor,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             Spacer(),
             Icon(
