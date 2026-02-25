@@ -15,7 +15,7 @@ Route<dynamic> onGenerateRoutes(RouteSettings routeSettings) {
       return MaterialPageRoute(
         builder:
             (context) => ZekrView(
-              azkarList: routeSettings.arguments as AzkarCategoryEntity,
+              azkarCategory: routeSettings.arguments as AzkarCategoryEntity,
             ),
       );
     default:
