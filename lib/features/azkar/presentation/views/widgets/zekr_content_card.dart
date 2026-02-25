@@ -51,22 +51,7 @@ class ZekrContentCard extends StatelessWidget {
                   SizedBox(height: 24.h),
                   GestureDetector(
                     onTap: () {
-                      String shareText = '📿\n\n';
-                      shareText += '\n${zekr.content}\n\n';
-
-                      if (zekr.description.isNotEmpty) {
-                        shareText += '\n${zekr.description}\n\n';
-                      }
-
-                      shareText += '**عدد المرات:** ${zekr.count}\n';
-                      shareText += '🔹 شارك الأجر مع أحبابك 🔹';
-
-                      SharePlus.instance.share(
-                        ShareParams(
-                          text: shareText,
-                          subject: 'ذكر من تطبيق صدقة',
-                        ),
-                      );
+                      shareZekr();
                     },
                     child: Container(
                       width: double.infinity,
@@ -158,5 +143,21 @@ class ZekrContentCard extends StatelessWidget {
 
   _createScaleAnimation() {
     return const AlwaysStoppedAnimation(1.0);
+  }
+
+  void shareZekr() {
+    String shareText = '📿\n\n';
+    shareText += '\n${zekr.content}\n\n';
+
+    if (zekr.description.isNotEmpty) {
+      shareText += '\n${zekr.description}\n\n';
+    }
+
+    shareText += '**عدد المرات:** ${zekr.count}\n';
+    shareText += '🔹 شارك الأجر مع أحبابك 🔹';
+
+    SharePlus.instance.share(
+      ShareParams(text: shareText, subject: 'ذكر من تطبيق صدقة'),
+    );
   }
 }
