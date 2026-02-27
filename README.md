@@ -1,16 +1,19 @@
-# sadaqa_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/d1478a93-84bd-4216-8678-f7b9b6ccaa38" width="200">
+      <br>
+      <b>Home Screen</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b456e843-18f3-4138-9704-6ba85568f74c" width="200">
+      <br>
+      <b>Azkar Screen</b>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b7897d37-b588-4de9-bfa5-b8e7e0e58b10" width="200">
+      <br>
+      <b>Tasbeeh Screen</b>
+    </td>
+  </tr>
+</table>
