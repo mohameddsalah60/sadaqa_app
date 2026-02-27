@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_text_styles.dart';
 import '../cubit/tasbeeh_cubit.dart';
 import 'widgets/tasbeeh_bottom_controls.dart';
 import 'widgets/tasbeeh_button.dart';
