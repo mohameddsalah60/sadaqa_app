@@ -7,10 +7,12 @@ import 'package:sadaqa_app/features/home/presentation/views/home_view.dart';
 import 'package:sadaqa_app/generated/l10n.dart';
 
 import 'core/helper_functions/on_generate_routes.dart';
+import 'core/services/shared_preferences_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
+  await SharedPreferencesService.init();
   runApp(const SadaqaApp());
 }
 

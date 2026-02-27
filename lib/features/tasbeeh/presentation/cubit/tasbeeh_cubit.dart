@@ -1,13 +1,14 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sadaqa_app/core/services/shared_preferences_service.dart';
 
 part 'tasbeeh_state.dart';
 
 class TasbeehCubit extends Cubit<TasbeehState> {
   TasbeehCubit()
     : super(
-        const TasbeehState(
-          counter: 0,
+        TasbeehState(
+          counter: (SharedPreferencesService.getInt('counter') ?? 0),
           maxCount: 9999999999,
           currentZekr: 'سبحان الله',
           animationTick: 0,
@@ -25,16 +26,17 @@ class TasbeehCubit extends Cubit<TasbeehState> {
     HapticFeedback.lightImpact();
 
     final newCounter = state.counter < state.maxCount ? state.counter + 1 : 0;
-
+    SharedPreferencesService.setData(key: 'counter', value: newCounter);
     emit(
       state.copyWith(
         counter: newCounter,
-        animationTick: state.animationTick + 1, // 🔥 trigger animation
+        animationTick: state.animationTick + 1,
       ),
     );
   }
 
   void reset() {
+    SharedPreferencesService.setData(key: 'counter', value: 0);
     emit(state.copyWith(counter: 0, animationTick: state.animationTick + 1));
   }
 
